@@ -1,0 +1,65 @@
+<div class="container">
+    <div class="search-container">
+        <div class="search-icon"></div>
+        <input type="text" class="search-input" placeholder="Search" id="searchInput">
+    </div>
+
+    <section>
+        <h2 class="section-title">Suggested</h2>
+        <div class="contacts-list" id="contactsList">
+            <div class="contact-item" data-name="sophia clark">
+                <div class="contact-avatar" style="background: linear-gradient(135deg, #ff6b6b, #ee5a24);">SC</div>
+                <div class="contact-info">
+                    <div class="contact-name">Sophia Clark</div>
+                    <div class="contact-title">Software Engineer</div>
+                </div>
+                <button class="connect-btn" onclick="connectUser(this)">Connect</button>
+            </div>
+
+            <div class="contact-item" data-name="ethan bennett">
+                <div class="contact-avatar" style="background: linear-gradient(135deg, #4ecdc4, #44a08d);">EB</div>
+                <div class="contact-info">
+                    <div class="contact-name">Ethan Bennett</div>
+                    <div class="contact-title">Product Manager</div>
+                </div>
+                <button class="connect-btn" onclick="connectUser(this)">Connect</button>
+            </div>
+
+            <div class="contact-item" data-name="olivia carter">
+                <div class="contact-avatar" style="background: linear-gradient(135deg, #a8edea, #fed6e3);">OC</div>
+                <div class="contact-info">
+                    <div class="contact-name">Olivia Carter</div>
+                    <div class="contact-title">UX Designer</div>
+                </div>
+                <button class="connect-btn" onclick="connectUser(this)">Connect</button>
+            </div>
+
+            <div class="contact-item" data-name="noah davis">
+                <div class="contact-avatar" style="background: linear-gradient(135deg, #667eea, #764ba2);">ND</div>
+                <div class="contact-info">
+                    <div class="contact-name">Noah Davis</div>
+                    <div class="contact-title">Data Scientist</div>
+                </div>
+                <button class="connect-btn" onclick="connectUser(this)">Connect</button>
+            </div>
+
+            <div class="contact-item" data-name="ava evans">
+                <div class="contact-avatar" style="background: linear-gradient(135deg, #ffecd2, #fcb69f);">AE</div>
+                <div class="contact-info">
+                    <div class="contact-name">Ava Evans</div>
+                    <div class="contact-title">Marketing Specialist</div>
+                </div>
+                <button class="connect-btn" onclick="connectUser(this)">Connect</button>
+            </div>
+        </div>
+    </section>
+</div>
+
+@section Scripts{
+    <script src="/ChatBox/js/Index.js"></script>
+
+}
+
+@section Styles{
+    <link href="/ChatBox/css/Index.css" rel="stylesheet" />
+}
