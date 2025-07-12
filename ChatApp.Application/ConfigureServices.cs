@@ -1,4 +1,5 @@
 using System.Reflection;
+using ChatApp.Application.Features.Interfaces;
 using ChatApp.Application.Features.Services;
 using Microsoft.Extensions.DependencyInjection;
 using OurResumeIR.Application.Services.Interfaces;
@@ -19,6 +20,8 @@ namespace ChatApp.Application
             //services.AddScoped<IFileUploaderService, LocalUploaderService>();
 
             services.AddScoped<IUserService, UserService>();
+            services.AddScoped<IChatMessageService, ChatMessageService>();
+            services.AddScoped<IChatRoomService, ChatRoomService>();
 
 
             #endregion
