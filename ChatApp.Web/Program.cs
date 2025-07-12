@@ -1,5 +1,7 @@
-using ChatApp.Infrastructure;
 using ChatApp.Application;
+using ChatApp.Infrastructure;
+using ChatApp.Web.Tools.ExtensionMethod;
+using SignalR_WebApplication.Hubs;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,7 +10,9 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.RegisterInfrastructureServices(builder.Configuration);
 builder.Services.RegisterApplicationServices();
+builder.Services.AddMyAuthentication();
 
+builder.Services.AddSignalR();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -24,10 +28,15 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
-app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+app.UseEndpoints(endpoint =>
+{
+    endpoint.MapControllerRoute(
+            name: "default",
+            pattern: "{controller=Home}/{action=Index}/{id?}");
+    endpoint.MapHub<SiteChatHub>("/chathub");
+});
 
 app.Run();
